@@ -1,0 +1,130 @@
+
+% Problema 7
+PsychDefaultSetup(2);
+[window, windowRect] = Screen('OpenWindow', 0, [128 128 128]);
+[screenXpixels, screenYpixels] = Screen('WindowSize', window);
+HideCursor;
+[xCenter, yCenter] = RectCenter(windowRect);
+colorline=[256 256 256];
+fromH=xCenter;
+fromV=yCenter-20;
+toH=xCenter;
+toV=yCenter+20;
+fromH2=xCenter-20;
+fromV2=yCenter;
+toH2=xCenter+20;
+toV2=yCenter;
+Screen('DrawLine', window, colorline, fromH, fromV, toH, toV, 6);
+Screen('DrawLine', window, colorline, fromH2, fromV2, toH2, toV2, 6);
+Screen('Flip', window);
+s=rand(1,15);
+d=s(s>=0.2&s<=0.5);
+WaitSecs(d(1));
+BaseRect=[0 0 100 100];
+centeredRect=CenterRectOnPointd(BaseRect, xCenter-screenYpixels/4, yCenter);
+RectColor=[256 0 0];
+Screen('FillRect', window, RectColor, centeredRect);
+BaseOval=[0 0 100 100];
+centeredRect2=CenterRectOnPointd(BaseOval, xCenter+screenYpixels/4, yCenter);
+OvalColor=[0 256 0];
+Screen('FillOval', window, OvalColor, centeredRect2);
+Screen('Flip', window);
+WaitSecs(2);
+Screen('FillRect', window, [128 128 128]);
+Screen('Flip', window);
+WaitSecs(0.5);
+Screen('CloseAll');
+ShowCursor;
+
+% Problema 8
+PsychDefaultSetup(2);
+[window, windowRect] = Screen('OpenWindow', 0, [128 128 128]);
+[screenXpixels, screenYpixels] = Screen('WindowSize', window);
+HideCursor;
+for i= 1:6
+[xCenter, yCenter] = RectCenter(windowRect);
+colorline=[256 256 256];
+fromH=xCenter;
+fromV=yCenter-20;
+toH=xCenter;
+toV=yCenter+20;
+fromH2=xCenter-20;
+fromV2=yCenter;
+toH2=xCenter+20;
+toV2=yCenter;
+Screen('DrawLine', window, colorline, fromH, fromV, toH, toV, 6);
+Screen('DrawLine', window, colorline, fromH2, fromV2, toH2, toV2, 6);
+Screen('Flip', window);
+s=rand(1,15);
+d=s(s>=0.2&s<=0.5);
+WaitSecs(d(1));
+BaseRect=[0 0 100 100];
+centeredRect=CenterRectOnPointd(BaseRect, xCenter-screenYpixels/4, yCenter);
+RectColor=[256 0 0];
+Screen('FillRect', window, RectColor, centeredRect);
+BaseOval=[0 0 100 100];
+centeredRect2=CenterRectOnPointd(BaseOval, xCenter+screenYpixels/4, yCenter);
+OvalColor=[0 256 0];
+Screen('FillOval', window, OvalColor, centeredRect2);
+Screen('Flip', window);
+WaitSecs(2);
+Screen('FillRect', window, [128 128 128]);
+Screen('Flip', window);
+WaitSecs(0.5);
+end
+Screen('CloseAll');
+ShowCursor;
+
+% Problema 9
+PsychDefaultSetup(2);
+[window, windowRect] = Screen('OpenWindow', 0, [128 128 128]);
+[screenXpixels, screenYpixels] = Screen('WindowSize', window);
+HideCursor;
+for i= 1:6
+[xCenter, yCenter] = RectCenter(windowRect);
+colorline=[256 256 256];
+fromH=xCenter;
+fromV=yCenter-20;
+toH=xCenter;
+toV=yCenter+20;
+fromH2=xCenter-20;
+fromV2=yCenter;
+toH2=xCenter+20;
+toV2=yCenter;
+Screen('DrawLine', window, colorline, fromH, fromV, toH, toV, 6);
+Screen('DrawLine', window, colorline, fromH2, fromV2, toH2, toV2, 6);
+Screen('Flip', window);
+s=rand(1,15);
+d=s(s>=0.2&s<=0.5);
+WaitSecs(d(1));
+tipo_trial = zeros (1,6);
+tipo_trial(1, 1:2:5)=1;
+tipo_trial(1, 2:2:6)=2;
+if tipo_trial (1,i) == 1
+BaseRect=[0 0 100 100];
+centeredRect=CenterRectOnPointd(BaseRect, xCenter-screenYpixels/4, yCenter);
+RectColor=[256 0 0];
+Screen('FillRect', window, RectColor, centeredRect);
+BaseOval=[0 0 100 100];
+centeredRect2=CenterRectOnPointd(BaseOval, xCenter+screenYpixels/4, yCenter);
+OvalColor=[0 256 0];
+Screen('FillOval', window, OvalColor, centeredRect2);
+Screen('Flip', window);
+elseif tipo_trial (1,i) == 2
+BaseRect=[0 0 100 100];
+centeredRect=CenterRectOnPointd(BaseRect, xCenter+screenYpixels/4, yCenter);
+RectColor=[256 0 0];
+Screen('FillRect', window, RectColor, centeredRect);
+BaseOval=[0 0 100 100];
+centeredRect2=CenterRectOnPointd(BaseOval, xCenter-screenYpixels/4, yCenter);
+OvalColor=[0 256 0];
+Screen('FillOval', window, OvalColor, centeredRect2);
+Screen('Flip', window);   
+end  
+WaitSecs(2);
+Screen('FillRect', window, [128 128 128]);
+Screen('Flip', window);
+WaitSecs(0.5);
+end
+Screen('CloseAll');
+ShowCursor;
