@@ -265,7 +265,9 @@ try
                 Screen('Flip', window);
                 while KeyCode(respL)==1
                     [keyIsDown,secs,KeyCode]=KbCheck;
+                    WaitSecs(0.001);
                 end
+                 KeyCode(respL)=0;
             elseif tipo_trial (2,i) == 2
                 BaseRect=[0 0 100 100];
                 BaseRect2=[0 0 50 50];
@@ -282,7 +284,9 @@ try
                 Screen('Flip', window);
                 while KeyCode(respR)==1
                     [keyIsDown,secs,KeyCode]=KbCheck;
+                    WaitSecs(0.001);
                 end
+                 KeyCode(respR)=0;
             end
         elseif tipo_trial (1,i) == 2
             BaseRect=[0 0 100 100];
@@ -311,7 +315,9 @@ try
                 Screen('Flip', window);
                 while KeyCode(respR)==1
                     [keyIsDown,secs,KeyCode]=KbCheck;
+                    WaitSecs(0.001);
                 end
+                 KeyCode(respR)=0;
             elseif tipo_trial (2,i) == 2
                 BaseRect=[0 0 100 100];
                 BaseRect2=[0 0 50 50];
@@ -328,7 +334,9 @@ try
                 Screen('Flip', window);
                 while KeyCode(respL)==1
                     [keyIsDown,secs,KeyCode]=KbCheck;
+                    WaitSecs(0.001);
                 end
+                 KeyCode(respL)=0;
             end
         end
         
